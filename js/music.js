@@ -41,7 +41,7 @@ home.addEventListener("click", function(){
   lecteurStruct.classList.add("fadeOut");
 
   setTimeout(function() {
-    window.location = "../html/music.html";
+    window.location = "./index.html";
   }, 1500);
 });
 
@@ -98,11 +98,11 @@ search.addEventListener("keyup", function(e) {
     if(list_path_music.length!=0){
       if(!etatPlay){
         if(!onPause){
-          song.src = "../Musique/Musique/"+list_path_music[currentSong]+ ".mp3";
+          song.src = "./Musique/Musique/"+list_path_music[currentSong]+ ".mp3";
           song.addEventListener("timeupdate", timeUpdate);
         }
         song.play();
-        playButton.src = "../icon/pause.png";
+        playButton.src = "./icon/pause.png";
 
         const titreOnPlay = playlist.querySelectorAll(".titre");
         for(let i = 0; i<titreOnPlay.length; i++){
@@ -113,12 +113,11 @@ search.addEventListener("keyup", function(e) {
           }
           
         }
-        document.body.style.backgroundImage= 'url("../Musique/fond/'+list_path_music[currentSong]+'.jpg")';
-        console.log("../Musique/fond/"+list_path_music[currentSong]+".jpg");
+        document.body.style.backgroundImage= 'url("./Musique/fond/'+list_path_music[currentSong]+'.jpg")';
         etatPlay = true;
       }else{
         song.pause();
-        playButton.src = "../icon/play.png";
+        playButton.src = "./icon/play.png";
         etatPlay = false;
         onPause = true;
         
@@ -127,7 +126,7 @@ search.addEventListener("keyup", function(e) {
       song.pause();
       song.removeEventListener("timeupdate", timeUpdate);
       song.src="";
-      playButton.src = "../icon/play.png";
+      playButton.src = "./icon/play.png";
       document.body.style.backgroundImage= '';
       time.innerHTML = "--:--";
       barre.style.width = 0;
